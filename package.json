@@ -15,8 +15,13 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
     "react-scripts": "5.0.1",
+    "typeit": "^8.7.0",
     "typescript": "^4.8.2",
     "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@types/webfontloader": "^1.6.34",
+    "node-sass": "^7.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
