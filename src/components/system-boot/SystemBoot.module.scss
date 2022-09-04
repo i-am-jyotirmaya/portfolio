@@ -1,0 +1,37 @@
+span.terminalSpinner {
+    &::after {
+        content: "";
+        animation: spin 500ms linear infinite;
+    }
+}
+
+.nameInput {
+    display: inline-block;
+    outline: none;
+    height: 1.2rem;
+    min-width: 1rem;
+    // margin-left: 10px;
+    caret-color: transparent;
+}
+
+@keyframes spin {
+    0% {
+        content: "|";
+    }
+
+    25% {
+        content: "/";
+    }
+
+    50% {
+        content: "-";
+    }
+
+    75% {
+        content: "\\";
+    }
+
+    100% {
+        content: "|";
+    }
+}

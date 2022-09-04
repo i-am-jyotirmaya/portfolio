@@ -31,6 +31,7 @@ span.terminalSpinner {
 }
 
 div.terminalText {
+    height: 100%;
 
     // Custom cursor
     &::after {
@@ -43,15 +44,6 @@ div.terminalText {
             0 0 7px rgba(#33c300, 0.7);
         animation: blink 1000ms linear infinite;
         caret-color: none;
-    }
-
-    .nameInput {
-        display: inline-block;
-        outline: none;
-        height: 1.2rem;
-        min-width: 1rem;
-        // margin-left: 10px;
-        caret-color: transparent;
     }
 }
 

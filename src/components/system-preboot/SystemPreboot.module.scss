@@ -1,0 +1,19 @@
+.preboot {
+    display: grid;
+    place-items: center;
+    height: 100%;
+
+    .loading {
+        display: inline-block;
+        margin-top: 1rem;
+        width: 12ch;
+        padding: 0 0.4ch;
+    }
+
+    svg {
+
+        fill: #33c300;
+        filter: drop-shadow(0 0 7px rgba(#33c300, 0.7)) drop-shadow(0 0 40px rgba(#33c300, 0.7));
+    }
+
+}

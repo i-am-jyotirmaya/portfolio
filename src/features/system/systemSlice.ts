@@ -13,7 +13,7 @@ export interface SystemState {
 
 const initialState: SystemState = {
   username: "",
-  status: "boot",
+  status: "preboot",
   bootStage: 0,
   loading: false,
 };
@@ -25,9 +25,11 @@ export const systemSlice = createSlice({
     preboot: (state) => {
       state.status = "preboot";
     },
+    startBoot: (state) => {
+      state.status = "boot";
+    },
     connectUser: (state, action: PayloadAction<string>) => {
       state.username = action.payload;
-      state.status = "boot";
     },
     bootStageCompleted: (state) => {
       if (state.bootStage < MAX_BOOT_STAGE) state.bootStage += 1;
@@ -47,7 +49,7 @@ export const systemSlice = createSlice({
   },
 });
 
-export const { connectUser, preboot, start, load, didLoad, bootStageCompleted } = systemSlice.actions;
+export const { connectUser, preboot, startBoot, start, load, didLoad, bootStageCompleted } = systemSlice.actions;
 
 export const selectUsername = (state: RootState) => state.system.username;
 export const selectSystemStatus = (state: RootState) => state.system.status;
