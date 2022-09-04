@@ -21,6 +21,12 @@
   },
   "devDependencies": {
     "@types/webfontloader": "^1.6.34",
+    "@typescript-eslint/eslint-plugin": "^5.36.1",
+    "@typescript-eslint/parser": "^5.36.1",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.31.5",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "node-sass": "^7.0.1"
   },
   "scripts": {

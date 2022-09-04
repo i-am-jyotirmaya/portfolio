@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { SystemBoot } from "../../components/system-boot/SystemBoot";
@@ -16,7 +16,7 @@ export const System = () => {
   // Show fake loading screen to simulate terminal loading
   useEffect(() => {
     setTimeout(() => dispatch(didLoad()), 1000);
-  }, []);
+  }, [dispatch]);
 
   const getSystemJsx = (systemStatus: "preboot" | "boot" | "welcome" | "idle" | "shuttingdown") => {
     switch (systemStatus) {
