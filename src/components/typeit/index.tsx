@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import * as React from "react";
 import { default as TypeItCore, TypeItOptions } from "typeit";
-import { TypeItInstance } from "typeit/dist/types";
 
 const { useRef, useEffect, useState } = React;
 
@@ -82,12 +84,9 @@ const TypeIt: React.FunctionComponent<TypeItProps> = ({
   }, []);
 
   return (
-    <DynamicElement
-      ref={elementRef}
-      children={shouldShowChildren ? children : null}
-      style={{ opacity: shouldShowChildren ? 0 : 1 }}
-      {...remainingProps}
-    />
+    <DynamicElement ref={elementRef} style={{ opacity: shouldShowChildren ? 0 : 1 }} {...remainingProps}>
+      {shouldShowChildren ? children : null}
+    </DynamicElement>
   );
 };
 
