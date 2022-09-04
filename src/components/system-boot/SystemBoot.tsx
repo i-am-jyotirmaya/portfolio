@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import TypeIt from "../../components/typeit";
@@ -27,13 +27,13 @@ export const SystemBoot = () => {
     }
   }, [status, bootStage]);
 
+  const onAnyKeyPress = useCallback(() => {
+    dispatch(bootStageCompleted());
+  }, [dispatch]);
+
   useEffect(() => {
     return () => document.removeEventListener("keydown", onAnyKeyPress);
-  }, []);
-
-  const onAnyKeyPress = () => {
-    dispatch(bootStageCompleted());
-  };
+  }, [onAnyKeyPress]);
 
   const handleNameSubmit = (e: React.KeyboardEvent<HTMLDivElement>) => {
     e.stopPropagation();
